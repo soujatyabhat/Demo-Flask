@@ -6,4 +6,4 @@ app = Flask(__name__)
 def index():
     return 'Web App with Python Flask!'
 
-app.run(host='0.0.0.0')
+app.run(host='0.0.0.0',debug=True)
