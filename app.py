@@ -1,9 +1,14 @@
-from flask import Flask
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return 'Web App with Python Flask!'
 
-app.run(host='0.0.0.0')
+@app.route('/', methods=['GET'])
+def helloworld():
+	if(request.method == 'GET'):
+		data = {"data": "Hello World"}
+		return jsonify(data)
+
+
+if __name__ == '__main__':
+	app.run(debug=True)
